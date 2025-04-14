@@ -26,14 +26,22 @@ public class WeatherSummary {
         // Hint: use Scanner. nextDouble() and hasNextDouble() will be helpful here!
         Scanner scan = new Scanner(System.in);
         List<Double> tempList = new ArrayList<>();
+
+        Double sum = 0.0;
+        int count = 0;
         
         while (scan.hasNextDouble()) {
-            tempList.add(scan.nextDouble());
+            Double eachTemp = scan.nextDouble();
+            tempList.add(eachTemp);
             
+            sum += eachTemp;
+            count++;
         }
         Double max = Collections.max(tempList);
         Double min = Collections.min(tempList);
+        Double average = sum/count;
         System.out.println("Max: " + max);
         System.out.println("Min: " + min);
+        System.out.println("Average: " + average);
     }  
 }
