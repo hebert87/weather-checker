@@ -1,4 +1,7 @@
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class WeatherSummary {
@@ -22,10 +25,15 @@ public class WeatherSummary {
         // Implement this method!
         // Hint: use Scanner. nextDouble() and hasNextDouble() will be helpful here!
         Scanner scan = new Scanner(System.in);
-
+        List<Double> tempList = new ArrayList<>();
+        
         while (scan.hasNextDouble()) {
-            Double temp = scan.nextDouble();
-            System.out.println(temp);
+            tempList.add(scan.nextDouble());
+            
         }
-    }
+        Double max = Collections.max(tempList);
+        Double min = Collections.min(tempList);
+        System.out.println("Max: " + max);
+        System.out.println("Min: " + min);
+    }  
 }
